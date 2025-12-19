@@ -30,7 +30,7 @@ export const GameButton: React.FC<GameButtonProps> = ({
     <div className="relative flex justify-center items-center py-8">
       {/* Outer Glow Ring (visible when rolling) */}
       {isRolling && (
-        <div 
+        <div
           className="absolute rounded-full bg-yellow-400 opacity-30 animate-ping"
           style={sizeStyle}
         ></div>
@@ -43,24 +43,24 @@ export const GameButton: React.FC<GameButtonProps> = ({
         className={`
           relative z-10 flex items-center justify-center rounded-full shadow-2xl transition-all duration-200
           border-8 
-          ${isRolling 
-            ? 'bg-gradient-to-tr from-orange-400 to-yellow-400 border-yellow-200 scale-105 animate-pulse-fast' 
-            : isFinished 
-              ? 'bg-gray-200 border-gray-300 cursor-not-allowed grayscale' 
+          ${isRolling
+            ? 'bg-gradient-to-tr from-orange-400 to-yellow-400 border-yellow-200 scale-105 animate-pulse-fast'
+            : isFinished
+              ? 'bg-slate-800 border-slate-700 cursor-not-allowed grayscale'
               : 'bg-gradient-to-br from-indigo-500 to-purple-600 border-white hover:scale-105 active:scale-95 hover:shadow-indigo-500/50'
           }
         `}
       >
-        <span 
-          style={fontSizeStyle} 
+        <span
+          style={fontSizeStyle}
           className={`
             font-black tracking-tighter leading-none select-none tabular-nums
-            ${isRolling || !isFinished ? 'text-white drop-shadow-md' : 'text-gray-400'}
+            ${isRolling || !isFinished ? 'text-white drop-shadow-md' : 'text-slate-500'}
           `}
         >
           {displayNumber === null ? 'GO' : displayNumber}
         </span>
-        
+
         {/* Helper text if needed */}
         {displayNumber === null && !isFinished && (
           <span className="absolute bottom-10 text-sm md:text-lg text-indigo-200 font-medium tracking-wide uppercase">
